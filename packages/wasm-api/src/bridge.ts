@@ -236,7 +236,7 @@ export class WasmBridge<T extends WasmExports = WasmExports>
 				if (isAsyncFunction(moduleImports[id])) {
 					if (!("Suspending" in WebAssembly))
 						unsupportedFeature(
-							"async function in WASM module imports"
+							`async function in WASM module imports: ${id}`
 						);
 					moduleImports[id] = new (<any>WebAssembly)["Suspending"](
 						moduleImports[id]
@@ -280,7 +280,7 @@ export class WasmBridge<T extends WasmExports = WasmExports>
 				if (item != null) {
 					if (!("promising" in WebAssembly))
 						unsupportedFeature(
-							"async function in WASM module exports"
+							`async function in WASM module exports: ${id}`
 						);
 					exports = {
 						...exports,
@@ -288,7 +288,7 @@ export class WasmBridge<T extends WasmExports = WasmExports>
 					};
 				} else {
 					this.logger.warn(
-						`WASM export ${id} declared as async, but missing...`
+						`WASM export '${id}' declared as async, but missing...`
 					);
 				}
 			}
