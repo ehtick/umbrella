@@ -21,7 +21,7 @@ export function movingMedian<A, B>(
 	n: number,
 	opts?: Partial<SortOpts<A, B>>
 ): Transducer<A, A>;
-export function movingMedian<A, B>(
+export function movingMedian<A>(
 	n: number,
 	src: Iterable<A>
 ): IterableIterator<A>;

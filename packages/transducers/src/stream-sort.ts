@@ -27,10 +27,7 @@ export function streamSort<A, B>(
 	n: number,
 	opts?: Partial<SortOpts<A, B>>
 ): Transducer<A, A>;
-export function streamSort<A, B>(
-	n: number,
-	src: Iterable<A>
-): IterableIterator<A>;
+export function streamSort<A>(n: number, src: Iterable<A>): IterableIterator<A>;
 export function streamSort<A, B>(
 	n: number,
 	opts: Partial<SortOpts<A, B>>,

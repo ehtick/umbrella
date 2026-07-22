@@ -47,7 +47,7 @@ export function partitionSort<A, B>(
 	n: number,
 	opts?: Partial<SortOpts<A, B>>
 ): Transducer<A, A>;
-export function partitionSort<A, B>(
+export function partitionSort<A>(
 	n: number,
 	src: Iterable<A>
 ): IterableIterator<A>;

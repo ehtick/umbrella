@@ -36,7 +36,7 @@ import { map } from "./map.js";
  * @param order - key order
  */
 export function swizzle<T>(order: PropertyKey[]): Transducer<T, any[]>;
-export function swizzle<T>(
+export function swizzle(
 	order: PropertyKey[],
 	src: Iterable<any>
 ): IterableIterator<any[]>;
