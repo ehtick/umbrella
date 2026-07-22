@@ -65,7 +65,7 @@ export interface IReset<T> {
 export interface ISwap<T> {
 	swap(fn: SwapFn<T, T>, ...args: any[]): T;
 
-	swapIn<A>(path: Path0, fn: SwapFn<T, T>, ...args: any[]): T;
+	swapIn(path: Path0, fn: SwapFn<T, T>, ...args: any[]): T;
 	swapIn<A>(
 		path: Path1<T, A>,
 		fn: SwapFn<OptPathVal<T, [A]>, PathVal<T, [A]>>,

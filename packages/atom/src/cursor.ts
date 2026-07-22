@@ -213,7 +213,7 @@ export class Cursor<T> implements IAtom<T>, IID<string>, IRelease {
 		return this.local.swap(fn, ...args);
 	}
 
-	swapIn<A>(path: Path0, fn: SwapFn<T, T>, ...args: any[]): T;
+	swapIn(path: Path0, fn: SwapFn<T, T>, ...args: any[]): T;
 	swapIn<A>(
 		path: Path1<T, A>,
 		fn: SwapFn<OptPathVal<T, [A]>, PathVal<T, [A]>>,
