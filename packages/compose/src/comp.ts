@@ -9,7 +9,7 @@ import { illegalArity } from "@thi.ng/errors/illegal-arity";
  * used as sole argument for the next function etc. Eventually returns
  * result of left-most function.
  */
-export function comp<A, B>(a: FnAny<A>): FnAny<A>;
+export function comp<A>(a: FnAny<A>): FnAny<A>;
 export function comp<A, B>(a: Fn<B, A>, b: FnAny<B>): FnAny<A>;
 export function comp<A, B, C>(a: Fn<B, A>, b: Fn<C, B>, c: FnAny<C>): FnAny<A>;
 export function comp<A, B, C, D>(
@@ -217,7 +217,7 @@ export const compL = compLeft;
 /**
  * Async version of {@link comp}.
  */
-export function compAsync<A, B>(a: FnAnyA<A>): FnAnyA<A>;
+export function compAsync<A>(a: FnAnyA<A>): FnAnyA<A>;
 export function compAsync<A, B>(a: FnA<B, A>, b: FnAnyA<B>): FnAnyA<A>;
 export function compAsync<A, B, C>(
 	a: FnA<B, A>,
