@@ -92,7 +92,7 @@ export const asPolygon = <AsPolygonFn>(
 				const [a, b, c, d, e, f, g, h] = vertices($);
 				return [
 					[f, g, h, e], // n
-					[d, a, b, c], // s
+					[a, d, c, b], // s
 					[c, d, h, g], // e
 					[a, b, f, e], // w
 					[b, c, g, f], // f
