@@ -75,6 +75,7 @@ export * from "./dist-sorensendice.js";
 export * from "./dist-weighted.js";
 export * from "./dist.js";
 export * from "./distsq.js";
+export * from "./distsqs.js";
 export * from "./div.js";
 export * from "./divi.js";
 export * from "./divn.js";

@@ -348,6 +348,16 @@ export type VecOpSRoVV<T> = (
 	sb?: number
 ) => T;
 
+export type VecOpSGRoVV<T> = (
+	a: ReadonlyVec,
+	b: ReadonlyVec,
+	num: number,
+	ia?: number,
+	ib?: number,
+	sa?: number,
+	sb?: number
+) => T;
+
 export type VecOpSVO<T> = (
 	out: Vec | null,
 	a: ReadonlyVec,
@@ -473,6 +483,7 @@ export type MultiVecOpNNO<O> = MultiVecOpImpl<VecOpNNO<O>>;
 export type MultiVecOpRoV<T> = MultiVecOpImpl<VecOpRoV<T>>;
 export type MultiVecOpRoVV<T> = MultiVecOpImpl<VecOpRoVV<T>>;
 export type MultiVecOpRoVVO<T, O> = MultiVecOpImpl<VecOpRoVVO<T, O>>;
+export type MultiVecOpSRoVV<T> = MultiVecOpImpl<VecOpSRoVV<T>>;
 
 export type MultiVecOpFN = MultiVecOpImpl<VecOpFN>;
 export type MultiVecOpFNO = MultiVecOpImpl<VecOpFNO>;
@@ -499,6 +510,8 @@ export type CompareOp = Fn3<BVec | null, ReadonlyVec, ReadonlyVec, BVec>;
 export type MultiCompareOp = MultiVecOpImpl<CompareOp>;
 
 export type DistanceFn = VecOpRoVV<number>;
+
+export type DistanceSFn = VecOpSRoVV<number>;
 
 /**
  * An object of the ~70 most common vector operations implemented for a specific
