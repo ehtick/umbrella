@@ -76,7 +76,7 @@ export interface ModelSpec {
  * been compiled yet and the latter is only specified as {@link ShaderSpec}.
  */
 export interface UncompiledModelSpec extends Omit<ModelSpec, "shader"> {
-	shader: ShaderSpec;
+	shader: ShaderSpec | IShader;
 }
 
 /**
