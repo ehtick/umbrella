@@ -8,7 +8,7 @@
 
 > [!NOTE]
 
-> This is one of 216 standalone projects. LLM-free, human-made and
+> This is one of 217 standalone projects. LLM-free, human-made and
 > cared for software, maintained as part of the
 > [@thi.ng/umbrella](https://codeberg.org/thi.ng/umbrella/) ecosystem and
 > anti-framework.
@@ -209,7 +209,7 @@ For Node.js REPL:
 const vec = await import("@thi.ng/vectors");
 ```
 
-Package sizes (brotli'd, pre-treeshake): ESM: 15.62 KB
+Package sizes (brotli'd, pre-treeshake): ESM: 15.83 KB
 
 ## Dependencies
 
@@ -568,23 +568,23 @@ Component wise op with one input vector and single scalar:
 
 ### Distances
 
-| Function              | Generic | Fixed | Strided | Int | Comments            |
-|-----------------------|---------|-------|---------|-----|---------------------|
-| `dist`                | ✓       | 2-4   |         |     |                     |
-| `distSq`              | ✓       | 2-4   |         |     |                     |
-| `distBrayCurtis`      | ✓       |       |         |     |                     |
-| `distCanberra`        | ✓       |       |         |     |                     |
-| `distChebyshev`       | ✓       | 2-4   |         |     |                     |
-| `distCosine`          | ✓       |       |         |     |                     |
-| `distHamming`         | ✓       |       |         |     |                     |
-| `distHaversineLatLon` |         | 2     |         |     | lat/lon coordinates |
-| `distHaversineLonLat` |         | 2     |         |     | lon/lat coordinates |
-| `distJaccard`         | ✓       |       |         |     |                     |
-| `distManhattan`       | ✓       | 2-4   |         |     |                     |
-| `distMinkowski`       | ✓       |       |         |     |                     |
-| `distSorensenDice`    | ✓       |       |         |     |                     |
-| `distWeighted`        | ✓       |       |         |     |                     |
-| `pointOnRay`          | ✓       | 2-3   |         |     | point at distance   |
+| Function              | Generic | Fixed | Strided    | Int | Comments            |
+|-----------------------|---------|-------|------------|-----|---------------------|
+| `dist`                | ✓       | 2-4   |            |     |                     |
+| `distSq`              | ✓       | 2-4   | S, S2 - S4 |     |                     |
+| `distBrayCurtis`      | ✓       |       |            |     |                     |
+| `distCanberra`        | ✓       |       |            |     |                     |
+| `distChebyshev`       | ✓       | 2-4   |            |     |                     |
+| `distCosine`          | ✓       |       |            |     |                     |
+| `distHamming`         | ✓       |       |            |     |                     |
+| `distHaversineLatLon` |         | 2     |            |     | lat/lon coordinates |
+| `distHaversineLonLat` |         | 2     |            |     | lon/lat coordinates |
+| `distJaccard`         | ✓       |       |            |     |                     |
+| `distManhattan`       | ✓       | 2-4   |            |     |                     |
+| `distMinkowski`       | ✓       |       |            |     |                     |
+| `distSorensenDice`    | ✓       |       |            |     |                     |
+| `distWeighted`        | ✓       |       |            |     |                     |
+| `pointOnRay`          | ✓       | 2-3   |            |     | point at distance   |
 
 ### Orientation
 
@@ -764,7 +764,10 @@ All resulting in boolean vectors:
 
 ### Hashing
 
-- `hash`
+| Function | Generic | Fixed   | Strided | Int | Comments |
+|----------|---------|---------|---------|-----|----------|
+| `hash`   | ✓       | 2-4     |         |     |          |
+| `hashC`  |         | C2 - C4 |         |     |          |
 
 ## Authors
 
