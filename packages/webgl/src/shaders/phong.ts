@@ -1,20 +1,21 @@
 // SPDX-License-Identifier: Apache-2.0
-import type { Sym } from "@thi.ng/shader-ast";
-import { F, M4, V3 } from "@thi.ng/shader-ast/api/types";
-import { diffuseLighting } from "@thi.ng/shader-ast-stdlib/light/lambert";
+import type { FloatSym, Vec3Sym } from "@thi.ng/shader-ast";
+import { perspectiveDivide } from "@thi.ng/shader-ast-stdlib/matrix/convert";
+import { transformMVP } from "@thi.ng/shader-ast-stdlib/matrix/mvp";
 import { surfaceNormal } from "@thi.ng/shader-ast-stdlib/matrix/normal";
+import { F, M4, S2D, V2, V3 } from "@thi.ng/shader-ast/api/types";
 import { assign } from "@thi.ng/shader-ast/ast/assign";
-import { ternary } from "@thi.ng/shader-ast/ast/controlflow";
 import { defMain } from "@thi.ng/shader-ast/ast/function";
 import { FLOAT0, vec4 } from "@thi.ng/shader-ast/ast/lit";
-import { add, gt, mul, sub } from "@thi.ng/shader-ast/ast/ops";
-import { $ } from "@thi.ng/shader-ast/ast/swizzle";
+import { add, mul } from "@thi.ng/shader-ast/ast/ops";
+import { $xyz } from "@thi.ng/shader-ast/ast/swizzle";
 import { sym } from "@thi.ng/shader-ast/ast/sym";
 import { dot, max, normalize, pow } from "@thi.ng/shader-ast/builtin/math";
+import { texture } from "@thi.ng/shader-ast/builtin/texture";
 import type { Material } from "../api/material.js";
 import type { ShaderPresetOpts, ShaderSpec } from "../api/shader.js";
 import { defMaterial } from "../material.js";
-import { autoNormalMatrix1 } from "../matrices.js";
+import { autoNormalMatrix2 } from "../matrices.js";
 import { colorAttrib, positionAttrib } from "../utils.js";
 
 export type PhongOpts = ShaderPresetOpts<
@@ -23,57 +24,58 @@ export type PhongOpts = ShaderPresetOpts<
 
 export const PHONG = (opts: Partial<PhongOpts> = {}): ShaderSpec => ({
 	vs: (gl, unis, ins, outs) => [
-		defMain(() => {
-			let worldPos: Sym<"vec4">;
-			return [
-				(worldPos = sym(
-					mul(unis.model, vec4(positionAttrib(opts, ins), 1))
-				)),
-				assign(outs.vnormal, surfaceNormal(ins.normal, unis.normalMat)),
-				assign(outs.vlight, sub(unis.lightPos, $(worldPos, "xyz"))),
-				assign(outs.veye, sub(unis.eyePos, $(worldPos, "xyz"))),
-				assign(outs.vcolor, colorAttrib(opts, ins, unis.diffuseCol)),
-				assign(
-					gl.gl_Position,
-					mul(mul(unis.proj, unis.view), worldPos)
-				),
-			];
-		}),
+		defMain(() => [
+			assign(
+				gl.gl_Position,
+				transformMVP(
+					positionAttrib(opts, ins),
+					unis.model,
+					unis.view,
+					unis.proj
+				)
+			),
+			assign(outs.vposition, perspectiveDivide(gl.gl_Position)),
+			assign(outs.vnormal, surfaceNormal(ins.normal, unis.normalMat)),
+			assign(outs.vcolor, colorAttrib(opts, ins, unis.diffuseCol)),
+			opts.uv ? assign(outs.vuv, ins[opts.uv]) : null,
+		]),
 	],
 	fs: (_, unis, ins, outs) => [
 		defMain(() => {
-			let normal: Sym<"vec3">;
-			let light: Sym<"vec3">;
-			let directional: Sym<"float">;
-			let specular: Sym<"float">;
+			let normal: Vec3Sym;
+			let lightDir: Vec3Sym;
+			let halfDir: Vec3Sym;
+			let diffuse: FloatSym;
+			let specular: FloatSym;
 			return [
 				(normal = sym(normalize(ins.vnormal))),
-				(light = sym(normalize(ins.vlight))),
-				(directional = sym(max(dot(normal, light), FLOAT0))),
+				(lightDir = sym(normalize(unis.lightDir))),
+				(halfDir = sym(
+					normalize(add(normalize(ins.vposition), lightDir))
+				)),
+				(diffuse = sym(max(dot(normal, lightDir), FLOAT0))),
 				(specular = sym(
-					ternary(
-						gt(directional, FLOAT0),
-						pow(
-							dot(
-								normal,
-								normalize(add(light, normalize(ins.veye)))
-							),
-							unis.shininess
-						),
-						FLOAT0
-					)
+					pow(max(dot(halfDir, normal), FLOAT0), unis.shininess)
 				)),
 				assign(
 					outs.fragColor,
 					vec4(
 						add(
-							diffuseLighting(
-								directional,
-								ins.vcolor,
-								unis.lightCol,
-								unis.ambientCol
-							),
-							mul(unis.specularCol, specular)
+							unis.ambientCol,
+							add(
+								mul(
+									opts.uv
+										? mul(
+												$xyz(
+													texture(unis.tex, ins.vuv)
+												),
+												ins.vcolor
+											)
+										: ins.vcolor,
+									diffuse
+								),
+								mul(unis.specularCol, specular)
+							)
 						),
 						1
 					)
@@ -84,26 +86,26 @@ export const PHONG = (opts: Partial<PhongOpts> = {}): ShaderSpec => ({
 	attribs: {
 		position: V3,
 		normal: V3,
+		...(opts.uv ? { [opts.uv]: V2 } : null),
 		...(opts.color && !opts.instanceColor ? { [opts.color]: V3 } : null),
 		...(opts.instancePos ? { [opts.instancePos]: V3 } : null),
 		...(opts.instanceColor ? { [opts.instanceColor]: V3 } : null),
 	},
 	varying: {
+		vposition: V3,
 		vnormal: V3,
-		veye: V3,
-		vlight: V3,
 		vcolor: V3,
+		...(opts.uv ? { vuv: V2 } : null),
 	},
 	uniforms: {
 		model: M4,
-		normalMat: [M4, autoNormalMatrix1()],
 		view: M4,
 		proj: M4,
+		normalMat: [M4, autoNormalMatrix2()],
 		shininess: [F, 32],
-		eyePos: V3,
-		lightPos: [V3, [0, 0, 2]],
-		lightCol: [V3, [1, 1, 1]],
+		lightDir: [V3, [0, 1, 0]],
 		...defMaterial(opts.material),
+		...(opts.uv ? { tex: S2D } : null),
 	},
 	state: {
 		depth: true,
