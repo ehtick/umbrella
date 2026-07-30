@@ -4,7 +4,7 @@ import type { INeighborhood } from "@thi.ng/distance";
 import { assert } from "@thi.ng/errors/assert";
 import type { ReadonlyVec } from "@thi.ng/vectors";
 import { equals } from "@thi.ng/vectors/equals";
-import { hash2, hash3 } from "@thi.ng/vectors/hash";
+import { hashC2, hashC3 } from "@thi.ng/vectors/hash";
 import type { ASpatialGrid } from "./aspatial-grid.js";
 
 export interface QueryNeighborhoodOpts {
@@ -229,7 +229,7 @@ export class HashGrid2<T> extends AHashGrid<T> implements IEmpty<HashGrid2<T>> {
 		let x: number, y: number, i: number, j: number, h: number, val: T;
 		for (x = xmin; x <= xmax; x++) {
 			for (y = ymin; y <= ymax; y++) {
-				h = hash2(x, y) % tableSize;
+				h = hashC2(x, y) % tableSize;
 				for (i = indices[h], j = indices[h + 1]; i < j; i++) {
 					val = items[entries[i]];
 					neighborhood.consider(keyFn(val), val);
@@ -248,7 +248,7 @@ export class HashGrid2<T> extends AHashGrid<T> implements IEmpty<HashGrid2<T>> {
 		let x: number, y: number, i: number, j: number, h: number;
 		for (x = xmin; x <= xmax; x++) {
 			for (y = ymin; y <= ymax; y++) {
-				h = hash2(x, y) % tableSize;
+				h = hashC2(x, y) % tableSize;
 				for (i = indices[h], j = indices[h + 1]; i < j; i++) {
 					if (neighborhood.includesPosition(keyFn(items[entries[i]])))
 						return true;
@@ -260,7 +260,7 @@ export class HashGrid2<T> extends AHashGrid<T> implements IEmpty<HashGrid2<T>> {
 
 	hashPos(p: ReadonlyVec) {
 		const s = this.invSize;
-		return hash2(p[0] * s, p[1] * s) % this.tableSize;
+		return hashC2(p[0] * s, p[1] * s) % this.tableSize;
 	}
 
 	protected queryBounds<N extends INeighborhood<ReadonlyVec, T>>(
@@ -310,7 +310,7 @@ export class HashGrid3<T> extends AHashGrid<T> implements IEmpty<HashGrid3<T>> {
 		for (x = xmin; x <= xmax; x++) {
 			for (y = ymin; y <= ymax; y++) {
 				for (z = zmin; z <= zmax; z++) {
-					h = hash3(x, y, z) % tableSize;
+					h = hashC3(x, y, z) % tableSize;
 					for (i = indices[h], j = indices[h + 1]; i < j; i++) {
 						val = items[entries[i]];
 						neighborhood.consider(keyFn(val), val);
@@ -334,7 +334,7 @@ export class HashGrid3<T> extends AHashGrid<T> implements IEmpty<HashGrid3<T>> {
 		for (x = xmin; x <= xmax; x++) {
 			for (y = ymin; y <= ymax; y++) {
 				for (z = zmin; z <= zmax; z++) {
-					h = hash3(x, y, z) % tableSize;
+					h = hashC3(x, y, z) % tableSize;
 					for (i = indices[h], j = indices[h + 1]; i < j; i++) {
 						if (
 							neighborhood.includesPosition(
@@ -351,7 +351,7 @@ export class HashGrid3<T> extends AHashGrid<T> implements IEmpty<HashGrid3<T>> {
 
 	hashPos(p: ReadonlyVec) {
 		const s = this.invSize;
-		return hash3(p[0] * s, p[1] * s, p[2] * s) % this.tableSize;
+		return hashC3(p[0] * s, p[1] * s, p[2] * s) % this.tableSize;
 	}
 
 	protected queryBounds<N extends INeighborhood<ReadonlyVec, T>>(
