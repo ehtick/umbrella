@@ -51,7 +51,7 @@ import { zip } from "./zip.js";
 export const rangeNd = (
 	min: ArrayLikeIterable<number>,
 	max?: ArrayLikeIterable<number>
-) =>
+): IterableIterator<number[]> =>
 	permutations.apply(
 		null,
 		<Range[]>(
