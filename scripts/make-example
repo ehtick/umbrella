@@ -78,8 +78,8 @@ cat << EOF > "$MODULE"/package.json
 	},
 	"devDependencies": {
 		"@thi.ng/meta-css": "workspace:^",
-		"typescript": "^5.9.3",
-		"vite": "^7.3.2"
+		"typescript": "^6.0.3",
+		"vite": "^8.1.5"
 	},
 	"dependencies": {
 		"@thi.ng/api": "workspace:^",
@@ -91,7 +91,7 @@ cat << EOF > "$MODULE"/package.json
 	},
 	"thi.ng": {
 		"readme": false,
-		"screenshot": "examples/$1.png"
+		"screenshot": "examples/$1.avif"
 	}
 }
 EOF
@@ -145,7 +145,7 @@ echo "writing README.md..."
 cat << EOF > "$MODULE"/README.md
 # $1
 
-![screenshot](https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/$1.png)
+![screenshot](https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/$1.avif)
 
 [Live demo](http://demo.thi.ng/umbrella/$1/)
 
