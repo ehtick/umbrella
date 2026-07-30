@@ -72,12 +72,12 @@ const objMesh = async () => {
 	return mesh;
 };
 
-const W = Math.min(window.innerWidth - 32, window.innerHeight - 64);
+const W = Math.min(window.innerWidth - 32, window.innerHeight - 96);
 
 const { canvas, gl } = glCanvas({
 	width: W,
 	height: W,
-	parent: document.body,
+	parent: document.getElementById("app")!,
 });
 
 // const mesh = cubeMesh();

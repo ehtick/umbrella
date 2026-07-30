@@ -24,7 +24,7 @@ import MODEL_URL from "./bunny-normals.obj?url";
 // create webgl canvas
 const { gl, canvas } = glCanvas({
 	width: window.innerWidth - 32,
-	height: window.innerHeight - 100,
+	height: window.innerHeight - 128,
 });
 
 const loadModel = async () => {
