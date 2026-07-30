@@ -43,6 +43,7 @@
 	"dependencies": {
 		"@thi.ng/api": "^8.12.27",
 		"@thi.ng/arrays": "^2.14.25",
+		"@thi.ng/binary": "^3.6.16",
 		"@thi.ng/checks": "^3.11.0",
 		"@thi.ng/distance": "^3.0.50",
 		"@thi.ng/equiv": "^2.1.116",
@@ -117,6 +118,9 @@
 		},
 		"./spatial-grid3": {
 			"default": "./spatial-grid3.js"
+		},
+		"./spatial-hash": {
+			"default": "./spatial-hash.js"
 		}
 	},
 	"thi.ng": {
