@@ -63,9 +63,9 @@ const imul = Math.imul;
  * @param v - vector
  * @param hash - hash factor
  */
-export const hash = (v: ReadonlyVec, H = 0x9e3779b1) => {
+export const hash = (v: ReadonlyVec, H = M4) => {
 	let hash = -1;
-	for (let i = v.length; i-- > 0; ) {
+	for (let i = v.length; i-- > 0;) {
 		hash = (imul(H, hash) + __mix(hash, floatToUintBits(v[i]))) >>> 0;
 	}
 	return hash;
@@ -74,6 +74,7 @@ export const hash = (v: ReadonlyVec, H = 0x9e3779b1) => {
 const M1 = 0xcc9e2d51;
 const M2 = 0x1b873593;
 const M3 = 0xe6546b64;
+const M4 = 0x9e3779b1;
 
 /** @internal */
 const __mix: FnN2 = (h, k) => {
@@ -82,19 +83,55 @@ const __mix: FnN2 = (h, k) => {
 };
 
 /**
+ * Computes unsigned int hash code for given 2D vector.
+ *
+ * @param v
+ */
+export const hash2 = (v: ReadonlyVec) =>
+	(imul(v[0], M1) ^ imul(v[1], M2)) >>> 0;
+
+/**
  * Computes unsigned int hash code for given 2D coordinates.
  *
  * @param x
  * @param y
  */
-export const hash2 = (x: number, y: number) =>
-	(imul(x, M1) ^ imul(y, M3)) >>> 0;
+export const hashC2 = (x: number, y: number) =>
+	(imul(x, M1) ^ imul(y, M2)) >>> 0;
+
+/**
+ * Computes unsigned int hash code for given 3D vector.
+ *
+ * @param v
+ */
+export const hash3 = (v: ReadonlyVec) =>
+	(imul(v[0], M1) ^ imul(v[1], M2) ^ imul(v[2], M3)) >>> 0;
 
 /**
  * Computes unsigned int hash code for given 3D coordinates.
  *
  * @param x
  * @param y
+ * @param z
  */
-export const hash3 = (x: number, y: number, z: number) =>
+export const hashC3 = (x: number, y: number, z: number) =>
 	(imul(x, M1) ^ imul(y, M2) ^ imul(z, M3)) >>> 0;
+
+/**
+ * Computes unsigned int hash code for given 4D vector.
+ *
+ * @param v
+ */
+export const hash4 = (v: ReadonlyVec) =>
+	(imul(v[0], M1) ^ imul(v[1], M2) ^ imul(v[2], M3) ^ imul(v[3], M4)) >>> 0;
+
+/**
+ * Computes unsigned int hash code for given 4D coordinates.
+ *
+ * @param x
+ * @param y
+ * @param z
+ * @param w
+ */
+export const hashC4 = (x: number, y: number, z: number, w: number) =>
+	(imul(x, M1) ^ imul(y, M2) ^ imul(z, M3) ^ imul(w, M4)) >>> 0;
