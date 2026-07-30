@@ -8,7 +8,7 @@
 
 > [!NOTE]
 
-> This is one of 216 standalone projects. LLM-free, human-made and
+> This is one of 217 standalone projects. LLM-free, human-made and
 > cared for software, maintained as part of the
 > [@thi.ng/umbrella](https://codeberg.org/thi.ng/umbrella/) ecosystem and
 > anti-framework.
@@ -499,7 +499,7 @@ Browser ESM import:
 
 [JSDelivr documentation](https://www.jsdelivr.com/)
 
-Package sizes (brotli'd, pre-treeshake): ESM: 3.37 KB
+Package sizes (brotli'd, pre-treeshake): ESM: 3.38 KB
 
 ## Dependencies
 

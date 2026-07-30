@@ -8,7 +8,7 @@
 
 > [!NOTE]
 
-> This is one of 216 standalone projects. LLM-free, human-made and
+> This is one of 217 standalone projects. LLM-free, human-made and
 > cared for software, maintained as part of the
 > [@thi.ng/umbrella](https://codeberg.org/thi.ng/umbrella/) ecosystem and
 > anti-framework.
@@ -108,7 +108,7 @@ Note: @thi.ng/api is in _most_ cases a type-only import (not used at runtime)
 
 ## Usage examples
 
-18 projects in this repo's
+19 projects in this repo's
 [/examples](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples)
 directory are using this package:
 
@@ -131,6 +131,7 @@ directory are using this package:
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-cube.png" width="240"/>                    | WebGL multi-colored cube mesh                                                                | [Demo](https://demo.thi.ng/umbrella/webgl-cube/)             | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-cube)             |
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-cubemap.jpg" width="240"/>                 | WebGL cube maps with async texture loading                                                   | [Demo](https://demo.thi.ng/umbrella/webgl-cubemap/)          | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-cubemap)          |
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-grid.jpg" width="240"/>                    | WebGL instancing, animated grid                                                              | [Demo](https://demo.thi.ng/umbrella/webgl-grid/)             | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-grid)             |
+| <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-mesh.avif" width="240"/>                   | Basic thi.ng/geom-mesh creation and conversion from OBJ import                               | [Demo](https://demo.thi.ng/umbrella/webgl-mesh/)             | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-mesh)             |
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-msdf.jpg" width="240"/>                    | WebGL MSDF text rendering & particle system                                                  | [Demo](https://demo.thi.ng/umbrella/webgl-msdf/)             | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-msdf)             |
 
 ## API

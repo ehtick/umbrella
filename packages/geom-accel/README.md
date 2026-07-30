@@ -8,7 +8,7 @@
 
 > [!NOTE]
 
-> This is one of 216 standalone projects. LLM-free, human-made and
+> This is one of 217 standalone projects. LLM-free, human-made and
 > cared for software, maintained as part of the
 > [@thi.ng/umbrella](https://codeberg.org/thi.ng/umbrella/) ecosystem and
 > anti-framework.
@@ -75,12 +75,13 @@ For Node.js REPL:
 const accel = await import("@thi.ng/geom-accel");
 ```
 
-Package sizes (brotli'd, pre-treeshake): ESM: 4.72 KB
+Package sizes (brotli'd, pre-treeshake): ESM: 6.08 KB
 
 ## Dependencies
 
 - [@thi.ng/api](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/api)
 - [@thi.ng/arrays](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/arrays)
+- [@thi.ng/binary](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/binary)
 - [@thi.ng/checks](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/checks)
 - [@thi.ng/distance](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/distance)
 - [@thi.ng/equiv](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/equiv)

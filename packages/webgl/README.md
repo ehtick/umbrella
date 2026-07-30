@@ -8,7 +8,7 @@
 
 > [!NOTE]
 
-> This is one of 216 standalone projects. LLM-free, human-made and
+> This is one of 217 standalone projects. LLM-free, human-made and
 > cared for software, maintained as part of the
 > [@thi.ng/umbrella](https://codeberg.org/thi.ng/umbrella/) ecosystem and
 > anti-framework.
@@ -104,7 +104,7 @@ Browser ESM import:
 
 [JSDelivr documentation](https://www.jsdelivr.com/)
 
-Package sizes (brotli'd, pre-treeshake): ESM: 11.69 KB
+Package sizes (brotli'd, pre-treeshake): ESM: 11.63 KB
 
 ## Dependencies
 
@@ -129,7 +129,7 @@ Note: @thi.ng/api is in _most_ cases a type-only import (not used at runtime)
 
 ## Usage examples
 
-25 projects in this repo's
+26 projects in this repo's
 [/examples](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples)
 directory are using this package:
 
@@ -153,6 +153,7 @@ directory are using this package:
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-float-fbo.jpg" width="240"/>        | Drawing to floating point offscreen / multi-pass shader pipeline              | [Demo](https://demo.thi.ng/umbrella/webgl-float-fbo/)        | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-float-fbo)        |
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-game-of-life.png" width="240"/>     | Game of Life implemented as WebGL2 multi-pass shader pipeline                 | [Demo](https://demo.thi.ng/umbrella/webgl-game-of-life/)     | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-game-of-life)     |
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-grid.jpg" width="240"/>             | WebGL instancing, animated grid                                               | [Demo](https://demo.thi.ng/umbrella/webgl-grid/)             | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-grid)             |
+| <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-mesh.avif" width="240"/>            | Basic thi.ng/geom-mesh creation and conversion from OBJ import                | [Demo](https://demo.thi.ng/umbrella/webgl-mesh/)             | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-mesh)             |
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-msdf.jpg" width="240"/>             | WebGL MSDF text rendering & particle system                                   | [Demo](https://demo.thi.ng/umbrella/webgl-msdf/)             | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-msdf)             |
 |                                                                                                                               | Minimal multi-pass / GPGPU example                                            | [Demo](https://demo.thi.ng/umbrella/webgl-multipass/)        | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-multipass)        |
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-obj.avif" width="240"/>             | Basic 3D OBJ model loading & interactive arcball camera control               | [Demo](https://demo.thi.ng/umbrella/webgl-obj/)              | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-obj)              |

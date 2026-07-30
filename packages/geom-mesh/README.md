@@ -21,6 +21,7 @@
 - [Status](#status)
 - [Installation](#installation)
 - [Dependencies](#dependencies)
+- [Usage examples](#usage-examples)
 - [API](#api)
 - [Authors](#authors)
 - [License](#license)
@@ -74,6 +75,16 @@ Package sizes (brotli'd, pre-treeshake): ESM: 1.72 KB
 - [@thi.ng/webgl](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/webgl)
 
 Note: @thi.ng/api is in _most_ cases a type-only import (not used at runtime)
+
+## Usage examples
+
+One project in this repo's
+[/examples](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples)
+directory is using this package:
+
+| Screenshot                                                                                                         | Description                                                    | Live demo                                        | Source                                                                                |
+|:-------------------------------------------------------------------------------------------------------------------|:---------------------------------------------------------------|:-------------------------------------------------|:--------------------------------------------------------------------------------------|
+| <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-mesh.avif" width="240"/> | Basic thi.ng/geom-mesh creation and conversion from OBJ import | [Demo](https://demo.thi.ng/umbrella/webgl-mesh/) | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-mesh) |
 
 ## API
 

@@ -8,7 +8,7 @@
 
 > [!NOTE]
 
-> This is one of 216 standalone projects. LLM-free, human-made and
+> This is one of 217 standalone projects. LLM-free, human-made and
 > cared for software, maintained as part of the
 > [@thi.ng/umbrella](https://codeberg.org/thi.ng/umbrella/) ecosystem and
 > anti-framework.
@@ -402,6 +402,7 @@ packages (which are more low-level, lightweight and usable by themselves too):
 - [@thi.ng/geom-io-obj](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/geom-io-obj) - Wavefront OBJ parser (& exporter soon)
 - [@thi.ng/geom-isec](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/geom-isec) - 2D/3D shape intersection checks
 - [@thi.ng/geom-isoline](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/geom-isoline) - Fast 2D contour line extraction / generation
+- [@thi.ng/geom-mesh](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/geom-mesh) - Mesh data structures with support for incremental construction, spatial indexing, conversion/serialization for thi.ng/webgl
 - [@thi.ng/geom-poly-utils](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/geom-poly-utils) - 2D polygon/polyline analysis & processing utilities
 - [@thi.ng/geom-resample](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/geom-resample) - Customizable nD polyline interpolation, re-sampling, splitting & nearest point computation
 - [@thi.ng/geom-sdf](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/geom-sdf) - 2D Signed Distance Field creation from [@thi.ng/geom](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/geom) shapes, conversions, sampling, combinators
@@ -454,7 +455,7 @@ For Node.js REPL:
 const geom = await import("@thi.ng/geom");
 ```
 
-Package sizes (brotli'd, pre-treeshake): ESM: 17.61 KB
+Package sizes (brotli'd, pre-treeshake): ESM: 17.59 KB
 
 ## Dependencies
 
@@ -490,7 +491,7 @@ Note: @thi.ng/api is in _most_ cases a type-only import (not used at runtime)
 
 ## Usage examples
 
-40 projects in this repo's
+41 projects in this repo's
 [/examples](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples)
 directory are using this package:
 
@@ -536,6 +537,7 @@ directory are using this package:
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/text-canvas.png" width="240"/>            | 3D wireframe textmode demo                                                       | [Demo](https://demo.thi.ng/umbrella/text-canvas/)            | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/text-canvas)            |
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/trace-bitmap.jpg" width="240"/>           | Multi-layer vectorization & dithering of bitmap images                           | [Demo](https://demo.thi.ng/umbrella/trace-bitmap/)           | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/trace-bitmap)           |
 | <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/tsne-colors.avif" width="240"/>           | Animated t-SNE visualization of 4D data                                          | [Demo](https://demo.thi.ng/umbrella/tsne-colors/)            | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/tsne-colors)            |
+| <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-mesh.avif" width="240"/>            | Basic thi.ng/geom-mesh creation and conversion from OBJ import                   | [Demo](https://demo.thi.ng/umbrella/webgl-mesh/)             | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-mesh)             |
 
 ## API
 

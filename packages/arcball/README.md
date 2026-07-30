@@ -8,7 +8,7 @@
 
 > [!NOTE]
 
-> This is one of 216 standalone projects. LLM-free, human-made and
+> This is one of 217 standalone projects. LLM-free, human-made and
 > cared for software, maintained as part of the
 > [@thi.ng/umbrella](https://codeberg.org/thi.ng/umbrella/) ecosystem and
 > anti-framework.
@@ -86,14 +86,15 @@ The `thi.ng/rstream-gestures` dependency is only needed when using
 
 ## Usage examples
 
-Two projects in this repo's
+Three projects in this repo's
 [/examples](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples)
 directory are using this package:
 
-| Screenshot                                                                                                        | Description                                                       | Live demo                                           | Source                                                                                   |
-|:------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------|:----------------------------------------------------|:-----------------------------------------------------------------------------------------|
-| <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-cube.png" width="240"/> | 3D arcball controller to rotate the camera view of a colored cube | [Demo](https://demo.thi.ng/umbrella/webgl-arcball/) | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-arcball) |
-| <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-obj.avif" width="240"/> | Basic 3D OBJ model loading & interactive arcball camera control   | [Demo](https://demo.thi.ng/umbrella/webgl-obj/)     | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-obj)     |
+| Screenshot                                                                                                         | Description                                                       | Live demo                                           | Source                                                                                   |
+|:-------------------------------------------------------------------------------------------------------------------|:------------------------------------------------------------------|:----------------------------------------------------|:-----------------------------------------------------------------------------------------|
+| <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-cube.png" width="240"/>  | 3D arcball controller to rotate the camera view of a colored cube | [Demo](https://demo.thi.ng/umbrella/webgl-arcball/) | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-arcball) |
+| <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-mesh.avif" width="240"/> | Basic thi.ng/geom-mesh creation and conversion from OBJ import    | [Demo](https://demo.thi.ng/umbrella/webgl-mesh/)    | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-mesh)    |
+| <img src="https://codeberg.org/thi.ng/umbrella/media/branch/develop/assets/examples/webgl-obj.avif" width="240"/>  | Basic 3D OBJ model loading & interactive arcball camera control   | [Demo](https://demo.thi.ng/umbrella/webgl-obj/)     | [Source](https://codeberg.org/thi.ng/umbrella/src/branch/develop/examples/webgl-obj)     |
 
 ## API
 
