@@ -49,7 +49,7 @@
 	"devDependencies": {
 		"@thi.ng/equiv": "^2.1.116",
 		"esbuild": "^0.28.1",
-		"typedoc": "^0.28.19",
+		"typedoc": "^0.28.20",
 		"typescript": "^6.0.3"
 	},
 	"keywords": [

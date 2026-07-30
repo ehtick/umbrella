@@ -51,7 +51,7 @@
 		"@thi.ng/transducers": "^9.6.41",
 		"@thi.ng/vectors": "^8.6.37",
 		"esbuild": "^0.28.1",
-		"typedoc": "^0.28.19",
+		"typedoc": "^0.28.20",
 		"typescript": "^6.0.3"
 	},
 	"keywords": [

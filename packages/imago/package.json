@@ -52,13 +52,13 @@
 		"@thi.ng/pixel": "^7.5.37",
 		"@thi.ng/pixel-dither": "^1.1.205",
 		"@thi.ng/prefixes": "^2.3.77",
-		"sharp": "^0.35.2"
+		"sharp": "^0.35.3"
 	},
 	"devDependencies": {
 		"@thi.ng/vectors": "^8.6.38",
-		"@types/node": "^25.9.4",
+		"@types/node": "^26.1.1",
 		"esbuild": "^0.28.1",
-		"typedoc": "^0.28.19",
+		"typedoc": "^0.28.20",
 		"typescript": "^6.0.3"
 	},
 	"keywords": [
