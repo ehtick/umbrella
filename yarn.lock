@@ -3064,6 +3064,24 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@example/webgl-mesh@workspace:examples/webgl-mesh":
+  version: 0.0.0-use.local
+  resolution: "@example/webgl-mesh@workspace:examples/webgl-mesh"
+  dependencies:
+    "@thi.ng/arcball": "workspace:^"
+    "@thi.ng/geom": "workspace:^"
+    "@thi.ng/geom-io-obj": "workspace:^"
+    "@thi.ng/geom-mesh": "workspace:^"
+    "@thi.ng/matrices": "workspace:^"
+    "@thi.ng/meta-css": "workspace:^"
+    "@thi.ng/transducers": "workspace:^"
+    "@thi.ng/vectors": "workspace:^"
+    "@thi.ng/webgl": "workspace:^"
+    typescript: "npm:^6.0.3"
+    vite: "npm:^8.1.0"
+  languageName: unknown
+  linkType: soft
+
 "@example/webgl-msdf@workspace:examples/webgl-msdf":
   version: 0.0.0-use.local
   resolution: "@example/webgl-msdf@workspace:examples/webgl-msdf"
@@ -4771,6 +4789,7 @@ __metadata:
   dependencies:
     "@thi.ng/api": "npm:^8.12.27"
     "@thi.ng/arrays": "npm:^2.14.25"
+    "@thi.ng/binary": "npm:^3.6.16"
     "@thi.ng/checks": "npm:^3.11.0"
     "@thi.ng/distance": "npm:^3.0.50"
     "@thi.ng/equiv": "npm:^2.1.116"
@@ -4926,6 +4945,23 @@ __metadata:
     "@thi.ng/api": "npm:^8.12.27"
     "@thi.ng/transducers": "npm:^9.6.42"
     "@thi.ng/vectors": "npm:^8.6.38"
+    esbuild: "npm:^0.28.1"
+    typedoc: "npm:^0.28.19"
+    typescript: "npm:^6.0.3"
+  languageName: unknown
+  linkType: soft
+
+"@thi.ng/geom-mesh@workspace:^, @thi.ng/geom-mesh@workspace:packages/geom-mesh":
+  version: 0.0.0-use.local
+  resolution: "@thi.ng/geom-mesh@workspace:packages/geom-mesh"
+  dependencies:
+    "@thi.ng/api": "npm:^8.12.27"
+    "@thi.ng/binary": "npm:^3.6.16"
+    "@thi.ng/checks": "npm:^3.11.0"
+    "@thi.ng/errors": "npm:^2.6.16"
+    "@thi.ng/geom-accel": "npm:^4.1.97"
+    "@thi.ng/vectors": "npm:^8.6.38"
+    "@thi.ng/webgl": "npm:^6.9.117"
     esbuild: "npm:^0.28.1"
     typedoc: "npm:^0.28.19"
     typescript: "npm:^6.0.3"
