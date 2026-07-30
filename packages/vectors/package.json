@@ -388,6 +388,9 @@
 		"./distsq": {
 			"default": "./distsq.js"
 		},
+		"./distsqs": {
+			"default": "./distsqs.js"
+		},
 		"./div": {
 			"default": "./div.js"
 		},
