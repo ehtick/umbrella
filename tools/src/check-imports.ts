@@ -46,9 +46,13 @@ const updateImports = (root: string, latest = false, exitOnFail = true) => {
 	LOGGER.info("checking", root);
 	const pkgPath = root + "/package.json";
 	const deps = transduce(
-		map((src) => usedDependencies(src)),
+		comp(
+			// exclude files under /dev or /export
+			filter((src) => !/\/(dev|export)\//.test(src)),
+			map((src) => usedDependencies(src))
+		),
 		unionR<string>(),
-		// check /src or /src.xyz folders, but not under /dev or /export
+		// check /src or /src.xyz folders
 		dirs(root, /\/src(\.\w+)?$/)
 	);
 	const pkg = readJSON(pkgPath, LOGGER);
