@@ -4,10 +4,15 @@ import type { VecOpSGVV, VecOpSVV } from "./api.js";
 
 export const defOpSVV = (
 	op: FnN2
-): [VecOpSGVV, VecOpSVV, VecOpSVV, VecOpSVV] => [
+): [VecOpSGVV, VecOpSVV, VecOpSVV, VecOpSVV, VecOpSVV] => [
 	(o, a, b, k, io = 0, ia = 0, ib = 0, so = 1, sa = 1, sb = 1) => {
 		!o && (o = a);
 		while (k-- > 0) o[io + k * so] = op(a[ia + k * sa], b[ib + k * sb]);
+		return o;
+	},
+	(o, a, b, io = 0, ia = 0, ib = 0) => {
+		!o && (o = a);
+		o[io] = op(a[ia], b[ib]);
 		return o;
 	},
 	(o, a, b, io = 0, ia = 0, ib = 0, so = 1, sa = 1, sb = 1) => {
