@@ -210,6 +210,8 @@ export abstract class ATensor<T = number> implements ITensor<T> {
 		);
 	}
 
+	abstract pad(pads: NumericArray[], n: T): ITensor<T>;
+
 	pick(select: NumericArray): ITensor<T> {
 		const { shape, stride, offset } = __pick(select, this);
 		return tensor<any, any>(this.type, shape, {
@@ -315,6 +317,14 @@ export class Tensor0<T = number> extends ATensor<T> implements ITensor0<T> {
 		return this;
 	}
 
+	pad([[px0, px1]]: NumericArray[], n: T): ITensor<T> {
+		const size = 1 + px0 + px1;
+		const dest = this.storage.alloc(size);
+		dest.fill(n);
+		dest[px0] = this.data[this.offset];
+		return new Tensor1<T>(this.type, this.storage, dest, [size], [1]);
+	}
+
 	pick([x]: NumericArray) {
 		if (x !== 0) outOfBounds(x);
 		return new Tensor0<T>(
@@ -390,6 +400,21 @@ export class Tensor1<T = number> extends ATensor<T> implements ITensor1<T> {
 	set([x]: NumericArray, v: T) {
 		this.data[this.offset + x * this.stride[0]] = v;
 		return this;
+	}
+
+	pad([[px0, px1]]: NumericArray[], n: T): ITensor<T> {
+		const {
+			data: src,
+			shape: [sx],
+			stride: [tx],
+			offset,
+		} = this;
+		const size = this.shape[0] + px0 + px1;
+		const dest = this.storage.alloc(size);
+		dest.fill(n, 0, px0);
+		dest.fill(n, size - px1);
+		for (let i = 0; i < sx; i++) dest[px0 + i] = src[offset + i * tx];
+		return new Tensor1<T>(this.type, this.storage, dest, [size], [1]);
 	}
 
 	pick([x]: NumericArray): ITensor<T> {
@@ -482,6 +507,35 @@ export class Tensor2<T = number> extends ATensor<T> implements ITensor2<T> {
 		return this;
 	}
 
+	pad([[px0, px1], [py0, py1]]: NumericArray[], n: T): ITensor<T> {
+		const {
+			data: src,
+			shape: [sx, sy],
+			stride: [txa, tya],
+			offset: oa,
+		} = this;
+		const newShape = [sx + px0 + px1, sy + py0 + py1];
+		const newStride = shapeToStride(newShape);
+		const [txb] = newStride;
+		const ob = px0 * txb + py0;
+		const dest = this.storage.alloc(product(newShape));
+		dest.fill(n);
+		for (let x = 0; x < sx; x++) {
+			const oxa = oa + x * txa;
+			const oxb = ob + x * txb;
+			for (let y = 0; y < sy; y++) {
+				dest[oxb + y] = src[oxa + y * tya];
+			}
+		}
+		return new Tensor2<T>(
+			this.type,
+			this.storage,
+			dest,
+			newShape,
+			newStride
+		);
+	}
+
 	resize<S extends Shape>(
 		newShape: S,
 		fill?: T,
@@ -553,6 +607,42 @@ export class Tensor3<T = number> extends ATensor<T> implements ITensor3<T> {
 	set(pos: NumericArray, v: T) {
 		this.data[this.offset + dot3(pos, this.stride)] = v;
 		return this;
+	}
+
+	pad(
+		[[px0, px1], [py0, py1], [pz0, pz1]]: NumericArray[],
+		n: T
+	): ITensor<T> {
+		const {
+			data: src,
+			shape: [sx, sy, sz],
+			stride: [txa, tya, tza],
+			offset: oa,
+		} = this;
+		const newShape = [sx + px0 + px1, sy + py0 + py1, sz + pz0 + pz1];
+		const newStride = shapeToStride(newShape);
+		const [txb, tyb] = newStride;
+		const ob = px0 * txb + py0 * tyb + pz0;
+		const dest = this.storage.alloc(product(newShape));
+		dest.fill(n);
+		for (let x = 0; x < sx; x++) {
+			const oax = oa + x * txa;
+			const obx = ob + x * txb;
+			for (let y = 0; y < sy; y++) {
+				const oay = oax + y * tya;
+				const oby = obx + y * tyb;
+				for (let z = 0; z < sz; z++) {
+					dest[oby + z] = src[oay + z * tza];
+				}
+			}
+		}
+		return new Tensor3<T>(
+			this.type,
+			this.storage,
+			dest,
+			newShape,
+			newStride
+		);
 	}
 
 	resize<S extends Shape>(
@@ -637,6 +727,51 @@ export class Tensor4<T = number> extends ATensor<T> implements ITensor4<T> {
 	set(pos: NumericArray, v: T) {
 		this.data[this.offset + dot4(pos, this.stride)] = v;
 		return this;
+	}
+
+	pad(
+		[[px0, px1], [py0, py1], [pz0, pz1], [pw0, pw1]]: NumericArray[],
+		n: T
+	): ITensor<T> {
+		const {
+			data: src,
+			shape: [sx, sy, sz, sw],
+			stride: [txa, tya, tza, twa],
+			offset: oa,
+		} = this;
+		const newShape = [
+			sx + px0 + px1,
+			sy + py0 + py1,
+			sz + pz0 + pz1,
+			sw + pw0 + pw1,
+		];
+		const newStride = shapeToStride(newShape);
+		const [txb, tyb, tzb] = newStride;
+		const ob = px0 * txb + py0 * tyb + pz0 * tzb + pw0;
+		const dest = this.storage.alloc(product(newShape));
+		dest.fill(n);
+		for (let x = 0; x < sx; x++) {
+			const oax = oa + x * txa;
+			const obx = ob + x * txb;
+			for (let y = 0; y < sy; y++) {
+				const oay = oax + y * tya;
+				const oby = obx + y * tyb;
+				for (let z = 0; z < sz; z++) {
+					const oaz = oay + z * tza;
+					const obz = oby + z * tzb;
+					for (let w = 0; w < sw; w++) {
+						dest[obz + w] = src[oaz + w * twa];
+					}
+				}
+			}
+		}
+		return new Tensor4<T>(
+			this.type,
+			this.storage,
+			dest,
+			newShape,
+			newStride
+		);
 	}
 
 	resize<S extends Shape>(

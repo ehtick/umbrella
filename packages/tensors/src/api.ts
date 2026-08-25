@@ -281,6 +281,36 @@ export interface ITensor<T = number>
 	crop(pos: NumericArray, size: NumericArray): this;
 
 	/**
+	 * Pads tensor along one or more of its axes with given constant value `n`.
+	 *
+	 * @example
+	 * ```ts tangle:../export/itensor-pad.ts
+	 * import { print, range } from "@thi.ng/tensors";
+	 *
+	 * const a = range(100, 104).reshape([2, 2]);
+	 * print(a);
+	 *
+	 * // pad inner dimension with 0 on either side
+	 * print(a.pad([[0, 0], [1, 1]], 0));
+	 * //         0  100.0000  101.0000         0
+	 * //         0  102.0000  103.0000         0
+	 *
+	 * // pad all dimensions with 0:
+	 * // outer dimension: only prepend two rows
+	 * // inner dimension: pad on either side
+	 * print(a.pad([[2, 0], [1, 1]], 0));
+	 * //         0         0         0         0
+	 * //         0         0         0         0
+	 * //         0  100.0000  101.0000         0
+	 * //         0  102.0000  103.0000         0
+	 * ```
+	 *
+	 * @param pads
+	 * @param n
+	 */
+	pad(pads: NumericArray[], n: T): ITensor<T>;
+
+	/**
 	 * Returns a new tensor with step sizes adjusted for selected axes (Using
 	 * zero for an axis will keep its current step size). View transform only,
 	 * no data will be copied.
