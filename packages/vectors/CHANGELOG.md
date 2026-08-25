@@ -1,6 +1,6 @@
 # Change Log
 
-- **Last updated**: 2026-07-02T14:22:52Z
+- **Last updated**: 2026-08-25T17:11:45Z
 - **Generator**: [thi.ng/monopub](https://thi.ng/monopub)
 
 All notable changes to this project will be documented in this file.
@@ -10,6 +10,22 @@ See [Conventional Commits](https://conventionalcommits.org/) for commit guidelin
 
 **Note:** Unlisted _patch_ versions only involve non-code or otherwise excluded changes
 and/or version bumps of transitive dependencies.
+
+## [8.7.0](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/vectors@8.7.0/packages/vectors) (2026-08-25)
+
+#### 🚀 Features
+
+- add strided versions of `distSq()`, add supporting types ([75c00d7](https://codeberg.org/thi.ng/umbrella/commit/75c00d7))
+- add 1D strided versions of basic math ops ([2da0f1f](https://codeberg.org/thi.ng/umbrella/commit/2da0f1f))
+  - update `defOpSVV()` function generator to also produce 1D impl
+  - add `addS1`, `divS1`, `mulS1`, `subS1` fns
+
+#### 🩹 Bug fixes
+
+- update & rename `hash2/3/4()` functions ([89481e2](https://codeberg.org/thi.ng/umbrella/commit/89481e2))
+  - rename exisiting hash functions to `hashC2/3/4`,
+    following existing naming convention
+  - add new `hash2/3/4()` fns which accept a vector as arg
 
 ### [8.6.20](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/vectors@8.6.20/packages/vectors) (2026-02-07)
 

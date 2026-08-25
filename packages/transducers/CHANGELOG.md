@@ -1,6 +1,6 @@
 # Change Log
 
-- **Last updated**: 2026-07-02T14:22:52Z
+- **Last updated**: 2026-08-25T17:11:45Z
 - **Generator**: [thi.ng/monopub](https://thi.ng/monopub)
 
 All notable changes to this project will be documented in this file.
@@ -10,6 +10,13 @@ See [Conventional Commits](https://conventionalcommits.org/) for commit guidelin
 
 **Note:** Unlisted _patch_ versions only involve non-code or otherwise excluded changes
 and/or version bumps of transitive dependencies.
+
+### [9.6.43](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/transducers@9.6.43/packages/transducers) (2026-08-25)
+
+#### 🩹 Bug fixes
+
+- remove obsolete generics ([4190dea](https://codeberg.org/thi.ng/umbrella/commit/4190dea))
+- update `rangeNd()` ([7c66845](https://codeberg.org/thi.ng/umbrella/commit/7c66845))
 
 ### [9.6.29](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/transducers@9.6.29/packages/transducers) (2026-03-11)
 

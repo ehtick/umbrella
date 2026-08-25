@@ -1,6 +1,6 @@
 {
 	"name": "@thi.ng/sorted-map",
-	"version": "1.2.45",
+	"version": "1.2.46",
 	"description": "Skiplist-based sorted map & set implementation",
 	"type": "module",
 	"module": "./index.js",
@@ -40,12 +40,12 @@
 		"tool:tangle": "../../node_modules/.bin/tangle src/**/*.ts"
 	},
 	"dependencies": {
-		"@thi.ng/api": "^8.12.27",
-		"@thi.ng/associative": "^7.1.45",
-		"@thi.ng/checks": "^3.11.0",
-		"@thi.ng/compare": "^2.5.15",
-		"@thi.ng/random": "^4.1.53",
-		"@thi.ng/transducers": "^9.6.42"
+		"@thi.ng/api": "^8.12.28",
+		"@thi.ng/associative": "^7.1.46",
+		"@thi.ng/checks": "^3.11.1",
+		"@thi.ng/compare": "^2.5.16",
+		"@thi.ng/random": "^4.1.54",
+		"@thi.ng/transducers": "^9.6.43"
 	},
 	"devDependencies": {
 		"esbuild": "^0.28.2",

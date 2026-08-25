@@ -11,9 +11,8 @@ See [Conventional Commits](https://conventionalcommits.org/) for commit guidelin
 **Note:** Unlisted _patch_ versions only involve non-code or otherwise excluded changes
 and/or version bumps of transitive dependencies.
 
-## [1.1.0](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/disjoint-set@1.1.0/packages/disjoint-set) (2024-07-22)
+## [0.1.0](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/geom-mesh@0.1.0/packages/geom-mesh) (2026-08-25)
 
 #### 🚀 Features
 
-- import as new pkg ([#486](https://codeberg.org/thi.ng/umbrella/issues/486)) ([ebcef75](https://codeberg.org/thi.ng/umbrella/commit/ebcef75))
-  - extract `DisjointSet` from [@thi.ng/adjacency](https://codeberg.org/thi.ng/umbrella/src/branch/main/packages/adjacency)
+- import as new pkg ([0974f44](https://codeberg.org/thi.ng/umbrella/commit/0974f44))

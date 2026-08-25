@@ -1,6 +1,6 @@
 # Change Log
 
-- **Last updated**: 2026-07-21T23:55:13Z
+- **Last updated**: 2026-08-25T17:11:45Z
 - **Generator**: [thi.ng/monopub](https://thi.ng/monopub)
 
 All notable changes to this project will be documented in this file.

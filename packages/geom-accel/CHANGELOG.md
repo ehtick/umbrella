@@ -1,6 +1,6 @@
 # Change Log
 
-- **Last updated**: 2026-07-02T14:22:51Z
+- **Last updated**: 2026-08-25T17:11:45Z
 - **Generator**: [thi.ng/monopub](https://thi.ng/monopub)
 
 All notable changes to this project will be documented in this file.
@@ -10,6 +10,16 @@ See [Conventional Commits](https://conventionalcommits.org/) for commit guidelin
 
 **Note:** Unlisted _patch_ versions only involve non-code or otherwise excluded changes
 and/or version bumps of transitive dependencies.
+
+## [4.2.0](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/geom-accel@4.2.0/packages/geom-accel) (2026-08-25)
+
+#### 🚀 Features
+
+- add `SpatialHashNd/2/3` ([43b7a21](https://codeberg.org/thi.ng/umbrella/commit/43b7a21))
+
+#### ♻️ Refactoring
+
+- update imports ([a3e0d4f](https://codeberg.org/thi.ng/umbrella/commit/a3e0d4f))
 
 ### [4.1.71](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/geom-accel@4.1.71/packages/geom-accel) (2025-12-03)
 

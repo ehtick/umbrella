@@ -1,6 +1,6 @@
 # Change Log
 
-- **Last updated**: 2026-07-02T14:22:52Z
+- **Last updated**: 2026-08-25T17:11:45Z
 - **Generator**: [thi.ng/monopub](https://thi.ng/monopub)
 
 All notable changes to this project will be documented in this file.
@@ -10,6 +10,13 @@ See [Conventional Commits](https://conventionalcommits.org/) for commit guidelin
 
 **Note:** Unlisted _patch_ versions only involve non-code or otherwise excluded changes
 and/or version bumps of transitive dependencies.
+
+## [0.12.0](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/tensors@0.12.0/packages/tensors) (2026-08-25)
+
+#### 🚀 Features
+
+- add ITensor.pad() operation for all impls ([4ceeeca](https://codeberg.org/thi.ng/umbrella/commit/4ceeeca))
+  - add docs & code example
 
 ### [0.11.8](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/tensors@0.11.8/packages/tensors) (2026-03-11)
 

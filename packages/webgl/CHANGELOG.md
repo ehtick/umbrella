@@ -1,6 +1,6 @@
 # Change Log
 
-- **Last updated**: 2026-07-16T20:38:41Z
+- **Last updated**: 2026-08-25T17:11:45Z
 - **Generator**: [thi.ng/monopub](https://thi.ng/monopub)
 
 All notable changes to this project will be documented in this file.
@@ -10,6 +10,18 @@ See [Conventional Commits](https://conventionalcommits.org/) for commit guidelin
 
 **Note:** Unlisted _patch_ versions only involve non-code or otherwise excluded changes
 and/or version bumps of transitive dependencies.
+
+## [6.10.0](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/webgl@6.10.0/packages/webgl) (2026-08-25)
+
+#### 🚀 Features
+
+- update/rewrite/extend `PHONG` shader preset ([393d9fc](https://codeberg.org/thi.ng/umbrella/commit/393d9fc))
+  - simplify uniforms
+  - add support for UVs & texture-based diffuse color
+
+#### 🩹 Bug fixes
+
+- allow pre-compiled shaders in `UncompiledModelSpec` ([77dc292](https://codeberg.org/thi.ng/umbrella/commit/77dc292))
 
 ### [6.9.95](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/webgl@6.9.95/packages/webgl) (2026-02-07)
 

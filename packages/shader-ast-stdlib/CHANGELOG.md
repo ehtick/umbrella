@@ -1,6 +1,6 @@
 # Change Log
 
-- **Last updated**: 2026-07-02T14:22:52Z
+- **Last updated**: 2026-08-25T17:11:45Z
 - **Generator**: [thi.ng/monopub](https://thi.ng/monopub)
 
 All notable changes to this project will be documented in this file.
@@ -10,6 +10,12 @@ See [Conventional Commits](https://conventionalcommits.org/) for commit guidelin
 
 **Note:** Unlisted _patch_ versions only involve non-code or otherwise excluded changes
 and/or version bumps of transitive dependencies.
+
+## [1.1.0](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/shader-ast-stdlib@1.1.0/packages/shader-ast-stdlib) (2026-08-25)
+
+#### 🚀 Features
+
+- add `perspectiveDivide()` helper ([b5a791d](https://codeberg.org/thi.ng/umbrella/commit/b5a791d))
 
 ### [0.18.16](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/shader-ast-stdlib@0.18.16/packages/shader-ast-stdlib) (2024-06-21)
 

@@ -1,6 +1,6 @@
 {
 	"name": "@thi.ng/geom-mesh",
-	"version": "0.0.1",
+	"version": "0.1.0",
 	"description": "Mesh data structures with support for incremental construction, spatial indexing, conversion/serialization for thi.ng/webgl",
 	"type": "module",
 	"module": "./index.js",
@@ -40,13 +40,13 @@
 		"tool:tangle": "../../node_modules/.bin/tangle src/**/*.ts"
 	},
 	"dependencies": {
-		"@thi.ng/api": "^8.12.27",
-		"@thi.ng/binary": "^3.6.16",
-		"@thi.ng/checks": "^3.11.0",
-		"@thi.ng/errors": "^2.6.16",
-		"@thi.ng/geom-accel": "^4.1.97",
-		"@thi.ng/vectors": "^8.6.38",
-		"@thi.ng/webgl": "^6.9.117"
+		"@thi.ng/api": "^8.12.28",
+		"@thi.ng/binary": "^3.6.17",
+		"@thi.ng/checks": "^3.11.1",
+		"@thi.ng/errors": "^2.6.17",
+		"@thi.ng/geom-accel": "^4.2.0",
+		"@thi.ng/vectors": "^8.7.0",
+		"@thi.ng/webgl": "^6.10.0"
 	},
 	"devDependencies": {
 		"esbuild": "^0.28.2",

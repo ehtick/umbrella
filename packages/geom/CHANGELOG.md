@@ -1,6 +1,6 @@
 # Change Log
 
-- **Last updated**: 2026-07-02T14:22:51Z
+- **Last updated**: 2026-08-25T17:11:45Z
 - **Generator**: [thi.ng/monopub](https://thi.ng/monopub)
 
 All notable changes to this project will be documented in this file.
@@ -10,6 +10,14 @@ See [Conventional Commits](https://conventionalcommits.org/) for commit guidelin
 
 **Note:** Unlisted _patch_ versions only involve non-code or otherwise excluded changes
 and/or version bumps of transitive dependencies.
+
+### [8.3.37](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/geom@8.3.37/packages/geom) (2026-08-25)
+
+#### 🩹 Bug fixes
+
+- update `asPolygon()` impl for AABB shape type ([4f3071a](https://codeberg.org/thi.ng/umbrella/commit/4f3071a))
+  - update south-side orientation to be consistent with other the box faces
+    (i.e. resulting normals of each side are pointing outwards)
 
 ### [8.3.14](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/geom@8.3.14/packages/geom) (2026-02-07)
 
