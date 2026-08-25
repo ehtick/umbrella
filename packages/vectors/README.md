@@ -209,7 +209,7 @@ For Node.js REPL:
 const vec = await import("@thi.ng/vectors");
 ```
 
-Package sizes (brotli'd, pre-treeshake): ESM: 15.83 KB
+Package sizes (brotli'd, pre-treeshake): ESM: 15.91 KB
 
 ## Dependencies
 
@@ -458,10 +458,10 @@ Component wise op with 2 input vectors:
 
 | Function    | Generic | Fixed | Strided | Int          | Comments        |
 |-------------|---------|-------|---------|--------------|-----------------|
-| `add`       | ✓       | 2-4   | S2-S4   | I2-I4, U2-U4 |                 |
-| `div`       | ✓       | 2-4   | S2-S4   | I2-I4, U2-U4 |                 |
-| `mul`       | ✓       | 2-4   | S2-S4   | I2-I4, U2-U4 |                 |
-| `sub`       | ✓       | 2-4   | S2-S4   | I2-I4, U2-U4 |                 |
+| `add`       | ✓       | 2-4   | S1-S4   | I2-I4, U2-U4 |                 |
+| `div`       | ✓       | 2-4   | S1-S4   | I2-I4, U2-U4 |                 |
+| `mul`       | ✓       | 2-4   | S1-S4   | I2-I4, U2-U4 |                 |
+| `sub`       | ✓       | 2-4   | S1-S4   | I2-I4, U2-U4 |                 |
 | `fmod`      | ✓       | 2-4   |         |              | (C/JS behavior) |
 | `mod`       | ✓       | 2-4   |         |              | (GLSL behavior) |
 | `pow`       | ✓       | 2-4   |         |              |                 |

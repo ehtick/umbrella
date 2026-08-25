@@ -22,6 +22,7 @@ list here):
 - [.hi(pos)](https://docs.thi.ng/umbrella/tensors/interfaces/ITensor.html#hi-1): Crop tensor (high end, zero copy)
 - [.index(pos)](https://docs.thi.ng/umbrella/tensors/interfaces/ITensor.html#index-1): Get index for position
 - [.lo(pos)](https://docs.thi.ng/umbrella/tensors/interfaces/ITensor.html#lo-1): Crop tensor (low end, zero copy)
+- [.pad(pads, n)](https://docs.thi.ng/umbrella/tensors/interfaces/ITensor.html#pad-1): Pad tensor along one or more dimensions with constant value
 - [.pack(storage?)](https://docs.thi.ng/umbrella/tensors/interfaces/ITensor.html#pack-1): Copy tensor with data tightly packed
 - [.pick(axes)](https://docs.thi.ng/umbrella/tensors/interfaces/ITensor.html#pick-1): Select axes only (zero copy)
 - [.position(index)](https://docs.thi.ng/umbrella/tensors/interfaces/ITensor.html#position-1): Get position for index
