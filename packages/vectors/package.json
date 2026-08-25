@@ -50,7 +50,7 @@
 		"@thi.ng/strings": "^3.12.9"
 	},
 	"devDependencies": {
-		"esbuild": "^0.28.1",
+		"esbuild": "^0.28.2",
 		"typedoc": "^0.28.20",
 		"typescript": "^6.0.3"
 	},

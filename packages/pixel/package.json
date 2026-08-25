@@ -51,7 +51,7 @@
 		"@thi.ng/porter-duff": "^2.1.139"
 	},
 	"devDependencies": {
-		"esbuild": "^0.28.1",
+		"esbuild": "^0.28.2",
 		"typedoc": "^0.28.20",
 		"typescript": "^6.0.3"
 	},
