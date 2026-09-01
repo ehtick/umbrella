@@ -430,6 +430,9 @@
 		"./pluck": {
 			"default": "./pluck.js"
 		},
+		"./post-process": {
+			"default": "./post-process.js"
+		},
 		"./push-copy": {
 			"default": "./push-copy.js"
 		},

@@ -17,6 +17,7 @@ export * from "./deep-transform.js";
 export * from "./juxtr.js";
 export * from "./lookup.js";
 export * from "./key-selector.js";
+export * from "./post-process.js";
 export * from "./renamer.js";
 
 // reducers
