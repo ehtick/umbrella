@@ -1,6 +1,6 @@
 # Change Log
 
-- **Last updated**: 2026-08-25T17:11:45Z
+- **Last updated**: 2026-09-01T10:56:00Z
 - **Generator**: [thi.ng/monopub](https://thi.ng/monopub)
 
 All notable changes to this project will be documented in this file.
@@ -10,6 +10,13 @@ See [Conventional Commits](https://conventionalcommits.org/) for commit guidelin
 
 **Note:** Unlisted _patch_ versions only involve non-code or otherwise excluded changes
 and/or version bumps of transitive dependencies.
+
+## [1.5.0](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/units@1.5.0/packages/units) (2026-09-01)
+
+#### 🚀 Features
+
+- add `formatQuantity()` ([2336944](https://codeberg.org/thi.ng/umbrella/commit/2336944))
+  - add docs/example
 
 ## [1.4.0](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/units@1.4.0/packages/units) (2026-05-14)
 

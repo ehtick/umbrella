@@ -1,6 +1,6 @@
 {
 	"name": "@thi.ng/dcons",
-	"version": "3.2.202",
+	"version": "3.2.203",
 	"description": "Double-linked lists with comprehensive set of operations (incl. optional self-organizing behaviors)",
 	"type": "module",
 	"module": "./index.js",
@@ -46,7 +46,7 @@
 		"@thi.ng/equiv": "^2.1.117",
 		"@thi.ng/errors": "^2.6.17",
 		"@thi.ng/random": "^4.1.54",
-		"@thi.ng/transducers": "^9.6.43"
+		"@thi.ng/transducers": "^9.7.0"
 	},
 	"devDependencies": {
 		"esbuild": "^0.28.2",

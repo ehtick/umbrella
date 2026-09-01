@@ -1,6 +1,6 @@
 {
 	"name": "@thi.ng/arcball",
-	"version": "1.2.2",
+	"version": "1.2.3",
 	"description": "3D arcball controller for intuitive click & drag gesture-based camera view rotations. Quaternion-based.",
 	"type": "module",
 	"module": "./index.js",
@@ -42,7 +42,7 @@
 	"dependencies": {
 		"@thi.ng/api": "^8.12.28",
 		"@thi.ng/matrices": "^3.0.54",
-		"@thi.ng/rstream-gestures": "^5.0.180",
+		"@thi.ng/rstream-gestures": "^5.0.181",
 		"@thi.ng/vectors": "^8.7.0"
 	},
 	"devDependencies": {

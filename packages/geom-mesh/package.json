@@ -1,6 +1,6 @@
 {
 	"name": "@thi.ng/geom-mesh",
-	"version": "0.1.0",
+	"version": "0.1.1",
 	"description": "Mesh data structures with support for incremental construction, spatial indexing, conversion/serialization for thi.ng/webgl",
 	"type": "module",
 	"module": "./index.js",
@@ -44,9 +44,9 @@
 		"@thi.ng/binary": "^3.6.17",
 		"@thi.ng/checks": "^3.11.1",
 		"@thi.ng/errors": "^2.6.17",
-		"@thi.ng/geom-accel": "^4.2.0",
+		"@thi.ng/geom-accel": "^4.2.1",
 		"@thi.ng/vectors": "^8.7.0",
-		"@thi.ng/webgl": "^6.10.0"
+		"@thi.ng/webgl": "^6.10.1"
 	},
 	"devDependencies": {
 		"esbuild": "^0.28.2",
