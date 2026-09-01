@@ -52,6 +52,7 @@
     - [comp](#comp)
     - [compR](#compr)
     - [iterator](#iterator)
+    - [postProcess](#postprocess)
     - [reduce](#reduce)
     - [reduceRight](#reduceright)
     - [transduce](#transduce)
@@ -153,7 +154,7 @@ For Node.js REPL:
 const tx = await import("@thi.ng/transducers");
 ```
 
-Package sizes (brotli'd, pre-treeshake): ESM: 9.20 KB
+Package sizes (brotli'd, pre-treeshake): ESM: 9.25 KB
 
 ## Dependencies
 
@@ -861,6 +862,14 @@ Helper function to compose reducers.
 
 Similar to `transduce()`, but emits results as ES6 iterator (and hence doesn't
 use a reduction function).
+
+#### postProcess
+
+`postProcess = <A, B, C>(rfn: Reducer<A, B>, fn: Fn<B, C>): Reducer<A, C>`
+
+Helper function to post-process the result of an existing reducer using the
+provided final transformation function. Returns a new reducer which augments the
+completion function of the given reducer.
 
 #### reduce
 

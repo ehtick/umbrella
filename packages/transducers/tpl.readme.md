@@ -662,6 +662,14 @@ Helper function to compose reducers.
 Similar to `transduce()`, but emits results as ES6 iterator (and hence doesn't
 use a reduction function).
 
+#### postProcess
+
+`postProcess = <A, B, C>(rfn: Reducer<A, B>, fn: Fn<B, C>): Reducer<A, C>`
+
+Helper function to post-process the result of an existing reducer using the
+provided final transformation function. Returns a new reducer which augments the
+completion function of the given reducer.
+
 #### reduce
 
 `reduce<A, B>(rfn: Reducer<A, B>, acc?: A, xs: Iterable<B>): A`
