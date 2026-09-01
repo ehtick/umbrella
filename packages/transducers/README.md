@@ -314,6 +314,7 @@ package for quick SVG generation.
 
 ```ts
 import { asSvg, svgDoc, circle, polyline } from "@thi.ng/geom";
+import { comp, extendSides, iterator, interpolateHermite, mapIndexed } from "@thi.ng/transducers";
 
 // source values
 const values = [5, 10, 4, 8, 20, 2, 11, 7];

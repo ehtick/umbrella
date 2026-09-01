@@ -10,7 +10,7 @@ Based on ideas from older `thi.ng/validate-x` Clojure/ClojureScript library...
 
 Basic usage:
 
-```ts
+```ts tangle:export/readme1.ts
 import * as v from "@thi.ng/validate";
 
 // build validation function to check if a value is...

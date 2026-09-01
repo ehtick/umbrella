@@ -473,15 +473,19 @@ Quantities are created via
  to obtain the unwrapped amount (though it only should be used for dimensionless
  quantities). Use [`convert()`](#unit-conversions) otherwise!
 
- ```ts
-import { convert, div, quantity } from "@thi.ng/units";
+```ts tangle:export/readme-quantity1.ts
+import { convert, div, quantity, formatQuantity } from "@thi.ng/units";
 
 // (also available as preset)
 const speedOfLight = quantity(299792458, "m/s");
 
 // compute wavelength of a WiFi signal in millimeters
-convert(div(speedOfLight, quantity(2.4,"GHz")), "mm");
-// 124.9135
+console.log(convert(div(speedOfLight, quantity(2.4,"GHz")), "mm"));
+// 124.91352416666666
+
+// convert + format
+console.log(formatQuantity(div(speedOfLight, quantity(2.4,"GHz")), "mm", 3));
+// 124.914
 ```
 
 Some examples using vector quantities:
