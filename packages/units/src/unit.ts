@@ -589,6 +589,51 @@ export const formatSI = (u: Quantity<any> | MaybeUnit): string => {
 	return acc.length ? acc.join("·") : "<dimensionless>";
 };
 
+/**
+ * Produces string representation of given quantity in the desired unit and
+ * precision (number of fractional digits, default: 1). Components of
+ * multi-dimensional units are delimited with given `delim` (default: `×`).
+ *
+ * @remarks
+ * If `unit` is given as string, it MUST be a unit ID (or alias) previously
+ * registered via {@link defUnit}.
+ *
+ * @example
+ * ```ts tangle:../export/format-quantity.ts
+ * import { formatQuantity, DIN_A4 } from "@thi.ng/units";
+ *
+ * console.log(formatQuantity(DIN_A4, "cm", 1));
+ * // 21.0 × 29.7 cm
+ *
+ * console.log(formatQuantity(DIN_A4, "inch", 2));
+ * // 8.27 × 11.69 inch
+ *
+ * // with custom delimiter
+ * console.log(formatQuantity(DIN_A4, "inch", 0, " by "));
+ * // 8 by 12 inch
+ * ```
+ *
+ * @param q
+ * @param unit
+ * @param prec
+ * @param delim
+ */
+export const formatQuantity = (
+	q: Quantity<number | number[]>,
+	unit: string | NamedUnit,
+	prec = 1,
+	delim = " × "
+): string => {
+	const value = convert(q, unit);
+	return (
+		(isArray(value)
+			? value.map((x) => x.toFixed(prec)).join(delim)
+			: value.toFixed(prec)) +
+		" " +
+		(isString(unit) ? unit : unit.sym)
+	);
+};
+
 /** @internal */
 const __ensureUnit = (x: MaybeUnit) => (isString(x) ? asUnit(x) : x);
 
