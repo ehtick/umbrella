@@ -70,10 +70,32 @@ const dest: IObjectOf<IObjectOf<string>> = {
 		aac: "aac,adts",
 	},
 	image: {
+		jpeg: "jpeg,jpg,jpe",
 		// https://github.com/phoboslab/qoi/issues/167
 		qoi: "qoi",
 		// http://fileformats.archiveteam.org/wiki/Radiance_HDR
 		"vnd.radiance": "hdr,*pic,rgbe,xyze",
+		// camera raw image formats
+		"x-canon-cr2": "cr2",
+		"x-canon-cr3": "cr3",
+		"x-epson-erf": "erf",
+		"x-fuji-raf": "raf",
+		"x-hasselblad-3fr": "3fr",
+		"x-kodak-dcr": "dcr",
+		"x-kodak-kdc": "kdc",
+		"x-leica-rwl": "rwl",
+		"x-minolta-mrw": "mrw",
+		"x-nikon-nef": "nef",
+		"x-nikon-nrw": "nrw",
+		"x-olympus-orf": "orf",
+		"x-panasonic-rw2": "rw2",
+		"x-pentax-pef": "pef",
+		"x-phaseone-iiq": "iiq",
+		"x-samsung-srw": "srw",
+		"x-sigma-x3f": "x3f",
+		"x-sony-arw": "arw",
+		"x-sony-sr2": "sr2",
+		"x-sony-srf": "srf",
 	},
 	model: {
 		// https://www.iana.org/assignments/media-types/model/step
