@@ -1,6 +1,6 @@
 # Change Log
 
-- **Last updated**: 2026-08-25T17:11:45Z
+- **Last updated**: 2026-09-05T10:56:25Z
 - **Generator**: [thi.ng/monopub](https://thi.ng/monopub)
 
 All notable changes to this project will be documented in this file.
@@ -10,6 +10,16 @@ See [Conventional Commits](https://conventionalcommits.org/) for commit guidelin
 
 **Note:** Unlisted _patch_ versions only involve non-code or otherwise excluded changes
 and/or version bumps of transitive dependencies.
+
+## [2.9.0](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/mime@2.9.0/packages/mime) (2026-09-05)
+
+#### 🚀 Features
+
+- add support for registering additional MIME types ([bd0df34](https://codeberg.org/thi.ng/umbrella/commit/bd0df34))
+  - add `register()`
+  - add/update doc strings
+- update to latest mime-db, add camera RAW types ([8ae4d4d](https://codeberg.org/thi.ng/umbrella/commit/8ae4d4d))
+- add `groupType()` / `groupTypeForExt()` ([856a29d](https://codeberg.org/thi.ng/umbrella/commit/856a29d))
 
 ### [2.8.2](https://codeberg.org/thi.ng/umbrella/src/tag/@thi.ng/mime@2.8.2/packages/mime) (2025-12-03)
 
