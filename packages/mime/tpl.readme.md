@@ -7,14 +7,14 @@
 {{pkg.description}}
 
 All MIME type mappings are based on [mime-db](https://github.com/jshttp/mime-db)
-(2023-02-17). For filesize reasons only [a small selected
+(as of 2026-09-05). For filesize reasons only [a small selected
 number](https://codeberg.org/thi.ng/umbrella/src/branch/develop/packages/mime/tools/convert.ts#L7)
 of [vendor MIME types](https://www.rfc-editor.org/rfc/rfc4288#section-3.2) (aka
 `*/vnd.*`) are included. Most of the omitted ones are fairly obscure anyway, so
 likely not problematic...
 
-Additionally, this package defines some MIME types not included in the
-original DB, as well as some preference overrides.
+Additionally, this package defines some MIME types not included in the original
+DB (e.g. camera RAW image types), as well as some preference overrides.
 
 {{meta.status}}
 
