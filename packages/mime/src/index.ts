@@ -147,4 +147,23 @@ export const extensionsForType = (mime: string) => {
  */
 export const isCompressible = (mime: string) => !!(__group(mime)?.[0] === "1");
 
+/**
+ * Returns the group type of given MIME type (i.e. the prefix part)
+ *
+ * @param mime
+ */
+export const groupType = (mime: string) => mime.split("/")[0];
+
+/**
+ * Looks up {@link preferredType} for given file `ext` and if available returns
+ * its {@link groupType}, otherwise returns `fallback` (default: "application").
+ *
+ * @param ext
+ * @param fallback
+ */
+export const groupTypeForExt = (ext: string, fallback = "application") => {
+	const mime = preferredType(ext, "");
+	return mime ? groupType(mime) : fallback;
+};
+
 export * from "./presets.js";
