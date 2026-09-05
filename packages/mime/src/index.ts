@@ -1,5 +1,12 @@
 // SPDX-License-Identifier: Apache-2.0
-import { DB } from "./generated.js";
+import { DB as $DB } from "./generated.js";
+
+/**
+ * Local mutable copy
+ *
+ * @internal
+ */
+const DB = { ...$DB };
 
 /**
  * Decodes list of extensions, taking compressible flag into account.
@@ -8,6 +15,11 @@ import { DB } from "./generated.js";
  */
 const __ext = (val: string) => val.substring(~~(val[0] === "1")).split(",");
 
+/**
+ * Returns raw list-string of file extensions registered for given MIME type.
+ *
+ * @internal
+ */
 const __group = (mime: string) => {
 	const [prefix, suffix] = mime.split("/");
 	const group = DB[prefix];
@@ -33,6 +45,30 @@ export const MIME_TYPES = ((defs: any) => {
 	}
 	return res;
 })(DB);
+
+/**
+ * Registers or overwrites a file `ext`ension with given MIME `types`. The first
+ * type given will be used by {@link preferredType}. The `compressible` flag
+ * will be used by {@link isCompressible}.
+ *
+ * @param ext
+ * @param types
+ * @param compressible
+ */
+export const register = (
+	ext: string,
+	types: string[],
+	compressible = false
+) => {
+	MIME_TYPES[ext] = types;
+	const $ext = (compressible ? "1" : "") + ext;
+	for (const type of types) {
+		const [prefix, suffix] = type.split("/");
+		const group = DB[prefix];
+		if (group) group[suffix] = $ext;
+		else DB[prefix] = { [suffix]: $ext };
+	}
+};
 
 /**
  * Returns preferred MIME type for given file extension `ext`, or if no match is
@@ -99,8 +135,12 @@ export const extensionsForType = (mime: string) => {
  * gzip/brotli encoding).
  *
  * @remarks
+ * A negative answer here only means that serving data with this MIME type does
+ * usually _not_ benefit from additional compression, because the data already
+ * is compressed.
+ *
  * Note: Information here is included as is. Some of these judgements in the
- * original mime-db project (or their sources of information) are highly
+ * original mime-db project (or their sources of information) are
  * questionable...
  *
  * @param mime
